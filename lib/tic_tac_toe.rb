@@ -57,16 +57,16 @@ def current_player(board)
   board.each do |space|
     if space != " "
       count += 1
-    end 
-  end 
-  if count.odd? 
+    end
+  end
+  if count.odd?
     return "O"
-  end 
+  end
   if count.even?
     return "X"
-  end 
+  end
 end
-    
+
 
 def turn(board)
   valid = false
