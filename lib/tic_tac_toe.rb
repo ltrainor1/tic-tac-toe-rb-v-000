@@ -127,3 +127,58 @@ if winning_combo == nil && !empty
 end
 
 end
+
+def winner(board)
+  x_win = false
+  o_win = false 
+
+  WIN_COMBINATIONS.each do |combo|
+    x_win = combo.each do |space|
+      board[space] == "X"
+    end
+  
+    o_win = combo.each do |space|
+      board[space] == "O"
+    end
+  end 
+
+  if o_win
+    value = "O"
+  end
+  if x_win 
+    value = "X"
+  end
+   
+end 
+
+def full?(board)
+  full = board.all? do |space|
+    space != " "
+  end 
+  return full 
+end
+
+def over?(board)
+  if full?(board) || won?(board)
+    return true 
+  end 
+end 
+
+def draw?(board)
+  won = won?(board)
+  over = over?(board)
+  if !won && over
+    return true 
+  end 
+end 
+
+def winner(board)
+  value = won?(board)
+  if !value
+    return nil
+  else 
+    return board[value[0]]
+  end
+end 
+   
+  
