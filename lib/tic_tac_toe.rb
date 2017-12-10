@@ -1,5 +1,5 @@
 # Helper Method
-board = new Array(9, " ")
+board = [" "," "," "," "," "," "," "," "," "]
 
 def position_taken?(board, index)
   !(board[index].nil? || board[index] == " ")
