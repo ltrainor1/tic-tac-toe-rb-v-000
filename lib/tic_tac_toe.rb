@@ -86,24 +86,44 @@ def turn(board)
 end
 
 def won?(board)
-  winning_combo = nil
-  x_win = false
-  o_win = false
-  WIN_COMBINATIONS.each do |combo|
+won = false 
+winner = nil 
+empty = true 
+winning_combo = nil 
+x_win = false
+o_win = false 
 
-    x_win = combo.each do |space|
-      board[space] == "X"
-    end
-    o_win = combo.each do |space|
-      board[space] == "O"
-    end
-    if x_win || o_win
-      winning_combo = combo
-    end
-  end
-  if winning_combo != nil
-    return winning_combo
-  else
-    return false
-  end
-end
+  WIN_COMBINATIONS.each do |combo|
+    
+      x_win = combo.all? do |space|
+        board[space] == "X"
+      end 
+      
+      o_win = combo.all? do |space|
+        board[space] == "O"
+      end 
+      if x_win || o_win
+        winning_combo = combo 
+      end 
+    
+  end 
+
+ 
+
+empty = WIN_COMBINATIONS.each do |combo|
+  combo.each do |space|
+    board[space] == " "
+  end 
+end 
+
+if winning_combo != nil
+  return winning_combo
+end 
+if empty
+  return false 
+end 
+if winning_combo == nil && !empty
+  return false 
+end 
+
+end 
