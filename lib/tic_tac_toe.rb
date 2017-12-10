@@ -52,6 +52,22 @@ def move(board, index, player)
   board[index] = player
 end
 
+def current_player(board)
+  count = 0
+  board.each do |space|
+    if space != " "
+      count += 1
+    end 
+  end 
+  if count.odd? 
+    return "O"
+  end 
+  if count.even?
+    return "X"
+  end 
+end
+    
+
 def turn(board)
   valid = false
   while valid == false
