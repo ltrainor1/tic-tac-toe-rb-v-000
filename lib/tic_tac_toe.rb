@@ -60,5 +60,6 @@ def turn(board)
     index = input_to_index(input)
     valid = valid_move?(board, index)
   end
-  move(board, index)
+  player = current_player(board)
+  move(board, index, player)
 end
