@@ -86,6 +86,8 @@ def turn(board)
 end
 
 def won?(board)
+  x_win = false 
+  o_win = false 
   WIN_COMBINATIONS.each do |combo|
     combo.each do |space|
       x_win = board[space] == "X"
