@@ -180,3 +180,9 @@ def winner(board)
     return board[value[0]]
   end
 end
+
+def play(board)
+  until won?(board) || over?(board)
+    turn(board)
+  end 
+end 
