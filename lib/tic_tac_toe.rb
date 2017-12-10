@@ -185,4 +185,16 @@ def play(board)
   until won?(board) || over?(board)
     turn(board)
   end
+  if draw?(board)
+    puts "Cat's Game!"
+  end 
+  if won?(board)
+    if winner(board) == "X"
+      puts "Congratulations X!"
+    end 
+    if winner(board) == "O"
+      puts "Congratulations O!"
+    end 
+
+  end 
 end
