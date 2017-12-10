@@ -27,25 +27,25 @@ WIN_COMBINATIONS = [
   ]
 
 def input_to_index(input)
-  input = input.to_i 
+  input = input.to_i
   index = input - 1
   return index
-end 
+end
 
 def position_taken(board, index)
   if board[index] == " "
-    return false 
+    return false
   else
-    return true 
-  end 
-end 
+    return true
+  end
+end
 
 def valid_move?(board, index)
   if (index > 0 && index < 9) && !position_taken?(board, index)
     return true
-  else 
-    return false 
-  end 
-end 
+  else
+    return false
+  end
+end
 
   
