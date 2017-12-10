@@ -11,7 +11,7 @@ def display_board(board)
   puts" {board[3]} | {board[4]} | {board[5]} "
   puts"-----------"
   puts" {board[6]} | {board[7]} | {board[8]} "
-end 
+end
 
 # Define your WIN_COMBINATIONS constant
 
@@ -25,9 +25,9 @@ WIN_COMBINATIONS = [
   [0,4,8],
   [2,4,6]
   ]
-  
+
 WIN_NAMES = [
-  
+
   top_row_win = WIN_COMBINATIONS[0],
   mid_row_win = WIN_COMBINATIONS[1],
   bottom_row_win = WIN_COMBINATIONS[2],
@@ -37,106 +37,106 @@ WIN_NAMES = [
   left_diag_win = WIN_COMBINATIONS[6],
   right_diag_win = WIN_COMBINATIONS[7]
   ]
-  
+
 def won?(board)
-won = false 
-winner = nil 
-empty = true 
-winning_combo = nil 
+won = false
+winner = nil
+empty = true
+winning_combo = nil
 x_win = false
-o_win = false 
+o_win = false
 
   WIN_COMBINATIONS.each do |combo|
-    
+
       x_win = combo.all? do |space|
         board[space] == "X"
-      end 
-      
+      end
+
       o_win = combo.all? do |space|
         board[space] == "O"
-      end 
+      end
       if x_win || o_win
-        winning_combo = combo 
-      end 
-    
-  end 
+        winning_combo = combo
+      end
 
- 
+  end
+
+
 
 empty = WIN_COMBINATIONS.each do |combo|
   combo.each do |space|
     board[space] == " "
-  end 
-end 
+  end
+end
 
 if winning_combo != nil
   return winning_combo
-end 
+end
 if empty
-  return false 
-end 
+  return false
+end
 if winning_combo == nil && !empty
-  return false 
-end 
+  return false
+end
 
-end 
+end
 
 def winner(board)
   x_win = false
-  o_win = false 
+  o_win = false
 
   WIN_COMBINATIONS.each do |combo|
     x_win = combo.each do |space|
       board[space] == "X"
     end
-  
+
     o_win = combo.each do |space|
       board[space] == "O"
     end
-  end 
+  end
 
   if o_win
     value = "O"
   end
-  if x_win 
+  if x_win
     value = "X"
   end
-   
-end 
+
+end
 
 def full?(board)
   full = board.all? do |space|
     space != " "
-  end 
-  return full 
+  end
+  return full
 end
 
 def over?(board)
   if full?(board) || won?(board)
-    return true 
-  end 
-end 
+    return true
+  end
+end
 
 def draw?(board)
   won = won?(board)
   over = over?(board)
   if !won && over
-    return true 
-  end 
-end 
+    return true
+  end
+end
 
 def winner(board)
   value = won?(board)
   if !value
     return nil
-  else 
+  else
     return board[value[0]]
   end
-end 
+end
 
 def input_to_index(input)
-  input = input.to_i 
+  input = input.to_i
   index = input - 1
   return index
-end 
+end
   
