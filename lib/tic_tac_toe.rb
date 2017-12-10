@@ -187,14 +187,13 @@ def play(board)
   end
   if draw?(board)
     puts "Cat's Game!"
-  end 
+  end
   if won?(board)
     if winner(board) == "X"
       puts "Congratulations X!"
-    end 
+    end
     if winner(board) == "O"
       puts "Congratulations O!"
-    end 
-
-  end 
+    end
+  end
 end
