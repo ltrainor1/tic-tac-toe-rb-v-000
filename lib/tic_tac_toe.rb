@@ -184,5 +184,5 @@ end
 def play(board)
   until won?(board) || over?(board)
     turn(board)
-  end 
-end 
+  end
+end
