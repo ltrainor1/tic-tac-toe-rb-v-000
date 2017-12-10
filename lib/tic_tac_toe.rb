@@ -96,7 +96,7 @@ def won?(board)
     o_win = combo.each do |space|
       board[space] == "O"
     end
-  end 
+  end
   end
   if x_win || o_win
     return true
