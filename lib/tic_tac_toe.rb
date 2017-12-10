@@ -89,11 +89,11 @@ def won?(board)
   x_win = false
   o_win = false
   WIN_COMBINATIONS.each do |combo|
-    combo.each do |space|
-      x_win = board[space] == "X"
+    x_win = combo.each do |space|
+      board[space] == "X"
     end
-    combo.each do |space|
-      o_win = board[space] == "O"
+    o_win = combo.each do |space|
+      board[space] == "O"
     end
   end
   if x_win || o_win
